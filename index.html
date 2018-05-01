@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh" ng-app="App">
+<head>
+    <meta charset="UTF-8">
+    <title>学习AngularJS 1.x</title>
+    <link href="http://v3.bootcss.com/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <h1>{{"Hello World!"}}</h1>
+    <div class='content' ng-controller="indexCtrl">
+        <table class="table table-condensed table-bordered table-striped">
+        <tr>
+            <th>name</th>
+            <th>age</th>
+            <th>desc</th>
+            <th>action</th>
+        <tr>
+        <tr ng-repeat="item in list track by $index">
+            <td><editable e-model="item.name" e-index="{{$index}}" ng-dblclick="backup($index)"></editable></td>
+            <td><editable e-model="item.age" e-pattern="number" e-index="{{$index}}" ng-dblclick="backup($index)"></editable></td>
+            <td><editable e-model="item.desc" e-type="textarea" e-index="{{$index}}" ng-dblclick="backup($index)"></editable></td>
+            <td>
+                <button class="btn btn-primary btn-xs" ng-click="cancel($index)">cancel</button>
+                <button class="btn btn-primary btn-xs" ng-click="save($index)">save</button>
+            </td>
+        </tr>
+    </table>
+    </div>
+
+            
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/editable.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- 这里我们将app.js引入了进来 -->
+</body>
+</html>
