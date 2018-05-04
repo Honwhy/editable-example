@@ -11,7 +11,7 @@ App.directive("editable",function(){
                 eIndex:'@'
             },
             link: function (scope, element, attributes, controller) {
-                angular.element(element).on('dblclick',function(){
+                angular.element(element).parent().on('dblclick',function(){
                     scope.eEditing = true
                     scope.$apply()
                 })
