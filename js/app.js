@@ -3,8 +3,8 @@ var App = angular.module("App", []);
 App.controller('indexCtrl', ['$scope', 
     function($scope){
         $scope.list = [
-            {id: 1, name: 'honey',age: 26, desc: 'like football'},
-            {id: 2, name: 'honpp',age: 29, desc: 'like programming'}
+            {id: 1, name: 'honey',age: 26, gender: 'F', mobile: '13700013700', address: 'guangzhou',interest: 'like football'},
+            {id: 2, name: 'honpp',age: 29, gender: 'F', mobile: '18500013700', address: 'shenzhen',interest: 'like programming'}
         ]
         
         $scope.backupList = []
@@ -24,6 +24,7 @@ App.controller('indexCtrl', ['$scope',
         $scope.save = function($index) {
             console.log($scope.list[$index])
             // and then remove backupList[$index]
+            $scope.$broadcast('$eCancel',{index:$index});
         }
     }])
 App.controller("FirstCtrl", function($scope){

@@ -12,13 +12,19 @@
         <tr>
             <th>name</th>
             <th>age</th>
-            <th>desc</th>
+            <th>gender</th>
+            <th>mobile</th>
+            <th>address</th>
+            <th>interest</th>
             <th>action</th>
         <tr>
         <tr ng-repeat="item in list track by $index">
             <td ng-dblclick="backup($index)"><editable e-model="item.name" e-index="{{$index}}"></editable></td>
             <td ng-dblclick="backup($index)"><editable e-model="item.age" e-pattern="number" e-index="{{$index}}"></editable></td>
-            <td ng-dblclick="backup($index)"><editable e-model="item.desc" e-type="textarea" e-index="{{$index}}"></editable></td>
+            <td ng-dblclick="backup($index)"><editable e-model="item.gender" e-index="{{$index}}"></editable></td>
+            <td ng-dblclick="backup($index)"><editable e-model="item.mobile" e-index="{{$index}}"></editable></td>
+            <td ng-dblclick="backup($index)"><editable e-model="item.address" e-pattern="textarea" e-index="{{$index}}"></editable></td>
+            <td ng-dblclick="backup($index)"><editable e-model="item.interest" e-type="textarea" e-index="{{$index}}"></editable></td>
             <td>
                 <button class="btn btn-primary btn-xs" ng-click="cancel($index)" ng-disabled="!backupList[$index]">cancel</button>
                 <button class="btn btn-primary btn-xs" ng-click="save($index)" ng-disabled="!backupList[$index]">save</button>
